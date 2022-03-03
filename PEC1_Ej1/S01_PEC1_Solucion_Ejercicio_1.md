@@ -28,17 +28,36 @@
 
 2. El lenguaje CSS es muy rígido, poco práctico y ordenado a la hora de programar. Para evitar este problema se han creado los preprocesadores CSS, que ofrecen evidentes ventajas (0.5 puntos) 
 * Cita al menos 2 de estos preprocesadores. 
+    - SASS
+    - LESS
   
 * Cita al menos 4 ventajas que ofrecen estos preprocesadores. 
+  Estilos más avanzados
+  
+
   
 * Explica brevemente en qué consisten los sourcemaps. 
-  
+  Son ficheros que ayudan a transformar el código fuente al código transpilado.
 * Explica qué es un transpilador.
 
-3. El flujo de trabajo profesional en front-end hace indispensable el uso de herramientas como controles de versiones y herramientas de gestión de módulos (0.75 puntos).
+1. El flujo de trabajo profesional en front-end hace indispensable el uso de herramientas como controles de versiones y herramientas de gestión de módulos (0.75 puntos).
 * Cita al menos dos sistemas de control de versiones y dos herramientas de gestión de módulos.
+  git
+  subversion
+  webpack
+  parcel
 
 * Cita y explica al menos 3 comandos de Git. 
+  add
+  commit
+  push
+
   
 * Cita y explica brevemente las características más definitorias de WebPack.
+  Es un empaquetador de paquetes (bundler)
+  Facilita el poder gestionar los ficheros de un proyecto web.
+  Gestiona las dependencias del proyecto.
+  Tiene un servidor de desarrollo para el preview del proyecto con live preview, es decir, que al modificar los ficheros de código cambia el preview.
+  Es necesario mucha configuración, a diferencia de Parcel, en webpack la configuración es más compleja.
+
   
