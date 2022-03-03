@@ -2,7 +2,7 @@
 
 :root {
     --success-color: #2ecc71;
-    --error-color: #e74c3c;;
+    --error-color: #e74c3c;
 }
 
 * {
@@ -90,5 +90,4 @@ h2 {
     padding: 10px;
     margin-top: 20px;
     width: 100%;
-
 }
