@@ -4,18 +4,21 @@ const currencyEl_two = document.getElementById('currency-two');
 const amountEl_two = document.getElementById('amount-two');
 const rateEl = document.getElementById('rate');
 const swap = document.getElementById('swap');
+const msg=document.getElementById('msg');
 
-function calculate() {
+function  calculate() {
   const currency_one = currencyEl_one.value;
   const currency_two = currencyEl_two.value;
+  msg.innerText='Solicitando datos......................';
   fetch("https://open.exchangerate-api.com/v6/latest")
     .then(res => res.json())
     .then(data => {
-      //  console.log(data);
+      msg.innerText='';
       const rate = data.rates[currency_two] / data.rates[currency_one];
       rateEl.innerText = `1 ${currency_one} = ${rate} ${currency_two}`;
       amountEl_two.value = (amountEl_one.value * (rate)).toFixed(2);
-    });
+    })
+    .catch(error=>msg.innerText=error);
 }
 
 

@@ -33,13 +33,17 @@ function checkEmail(input) {
 
 //Check required fields
 function checkRequired(inputArr) {
+    let required=[];
     inputArr.forEach(function (input) {
         if (input.value.trim() === '') {
             showError(input, `${getFieldName(input)} is required`);
+            required.push(false);
         } else {
             showSuccess(input);
+            required.push(true);
         }
     });
+    return required;
 }
 
 //Check input lenght
@@ -65,16 +69,16 @@ function checkPasswordsMatch(input1, input2) {
 
 //Check age is valid
 function checkAge(input) {
-    if (!isNaN(input.value)) {
+    if (isNaN(input.value)) {
         showError(input, 'Must be a number');
-    } else if ((input.value<0) && (input.value>=999)) {
+    } else if ((input.value<0) || (input.value>=999)) {
         showError(input,'Debe ser mayor o igual que 0 y menor que 999');
     } else showSuccess(input);
 }
 
 //Check url is valid
 function checkUrl(input) {
-    const re=/^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,}))\.?)(?::\d{2,5})?(?:[/?#]\S*)?$/i
+     const re=/^(?:(?:https?|ftp):\/\/)?[\w\-]+((\.|\/)[\w\-]+)*$/i;
     if (re.test(input.value.trim())) {
         showSuccess(input);
     } else {
@@ -87,16 +91,16 @@ function getFieldName(input) {
     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
-
-
 //Event listeners
 form.addEventListener('submit', function (e) {
     e.preventDefault();
-    checkRequired([username, email, password, password2, age, url]);
-    checkLength(username, 3, 15);
-    checkLength(password, 6, 25);
-    checkEmail(email);
-    checkPasswordsMatch(password, password2);
-    checkAge(age);
-    checkUrl(url);
+  
+    let required=checkRequired([username, email, password, password2, age, url]);
+
+    if (required.shift()) checkLength(username, 3, 15);
+    if (required.shift()) checkEmail(email);
+    if (required.shift()) checkLength(password, 6, 25);
+    if (required.shift()) checkPasswordsMatch(password, password2);
+    if (required.shift()) checkAge(age);
+    if (required.shift()) checkUrl(url);
 });
