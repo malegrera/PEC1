@@ -3,7 +3,7 @@ const seats = document.querySelectorAll('.row .seat:not(.occupied)');
 const count = document.getElementById('count');
 const total = document.getElementById('total');
 const movieSelect = document.getElementById('movie');
-const currencyEl=document.getElementById('currency');
+const currencyEl = document.getElementById('currency');
 
 
 populateUI();
@@ -28,7 +28,7 @@ function updateSelectedCount() {
 
   count.innerText = selectedSeatsCount;
   total.innerText = selectedSeatsCount * ticketPrice;
-  
+
   setMovieData(movieSelect.selectedIndex, movieSelect.value);
 }
 
@@ -72,31 +72,31 @@ container.addEventListener('click', e => {
 
 function calculate() {
   const currency_old = movieSelect.dataset.currency;
-  movieSelect.dataset.currency=currencyEl.value;
+  movieSelect.dataset.currency = currencyEl.value;
   const currency_new = currencyEl.value;
- 
+
   fetch("https://open.exchangerate-api.com/v6/latest")
     .then(res => res.json())
     .then(data => {
       const rate = data.rates[currency_new] / data.rates[currency_old];
-    Array.from(movieSelect.options).forEach((e)=>{
-      e.innerText=e.innerText.substr(0,e.innerText.indexOf("(")-1);
-      e.value=(e.value*(rate)).toFixed(2);
-      e.innerText+=` (${e.value} ${currency_new})`;
-      ticketPrice=movieSelect.value;
-      updateSelectedCount();
-    });
+      Array.from(movieSelect.options).forEach((e) => {
+        e.innerText = e.innerText.substr(0, e.innerText.indexOf("(") - 1);
+        e.value = (e.value * (rate)).toFixed(2);
+        e.innerText += ` (${e.value} ${currency_new})`;
+        ticketPrice = movieSelect.value;
+        updateSelectedCount();
+      });
 
 
     });
-    
+
 }
 
 currencyEl.addEventListener('change', calculate);
 
-Array.from(movieSelect.options).forEach((e)=>{
-   e.innerText+=` (${e.value}$)`;
- });
+Array.from(movieSelect.options).forEach((e) => {
+  e.innerText += ` (${e.value}$)`;
+});
 
 // Initial count and total set
 updateSelectedCount();
