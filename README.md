@@ -39,7 +39,7 @@ function checkRequired(inputArr) {
     return resultado;
 }
 ```
-Para 
+Para comprobar que la edad sea numérica, mayor que 0 y menor o igual que 999 he añadido la siguiente función:
 ```
 function checkAge(input) {
     if (isNaN(input.value)) {
@@ -49,6 +49,7 @@ function checkAge(input) {
     } else showSuccess(input);
 }
 ```
+
 ***
 ## PEC1_Ej2_2
 Añado la función comprobar() que comprueba si el valor es negativo. Si es negativo muestro un mensaje indicando que no se permiten los valores negativos, y a los 3 segundos desaparece el mensaje.
