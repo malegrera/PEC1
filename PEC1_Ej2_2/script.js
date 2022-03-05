@@ -6,7 +6,7 @@ const rateEl = document.getElementById('rate');
 const swap = document.getElementById('swap');
 const msg = document.getElementById('msg');
 
-function calculate(evt) {
+function calculate() {
   const currency_one = currencyEl_one.value;
   const currency_two = currencyEl_two.value;
   msg.innerText = '\u23f3 Solicitando datos...';

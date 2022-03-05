@@ -5,7 +5,6 @@ const total = document.getElementById("total");
 const movieSelect = document.getElementById("movie");
 const currencyEl = document.getElementById("currency");
 const currency_current = document.getElementById("currency-current");
-let ticketPrice;
 
 // Save selected movie index, price and currency
 function setMovieData(movieIndex, moviePrice, movieCurrency) {
@@ -25,6 +24,7 @@ function updateSelectedCount() {
   const selectedSeatsCount = selectedSeats.length;
 
   count.innerText = selectedSeatsCount;
+  const ticketPrice = movieSelect.value;
   total.innerText = (selectedSeatsCount * ticketPrice).toFixed(2);
 
   setMovieData(movieSelect.selectedIndex, movieSelect.value, currencyEl.value);
@@ -51,7 +51,7 @@ function populateUI() {
 
 // Movie select event
 movieSelect.addEventListener("change", (e) => {
-  ticketPrice = +e.target.value;
+  
   setMovieData(e.target.selectedIndex, e.target.value);
   updateSelectedCount();
 });
@@ -107,7 +107,7 @@ function comprobar_inicio() {
       e.innerText += ` (${e.value} ${currency_new})`;
     });
   }
-  ticketPrice=movieSelect.value;
+
 }
 
 currencyEl.addEventListener("change", () => {
