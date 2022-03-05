@@ -51,7 +51,6 @@ function populateUI() {
 
 // Movie select event
 movieSelect.addEventListener("change", (e) => {
-  
   setMovieData(e.target.selectedIndex, e.target.value);
   updateSelectedCount();
 });
@@ -103,7 +102,6 @@ function comprobar_inicio() {
   if (currency_saved != "USD") {
     calculate("USD", currency_new);
   }
-
 }
 
 currencyEl.addEventListener("change", () => {
@@ -111,8 +109,8 @@ currencyEl.addEventListener("change", () => {
   currency_current.innerText;
   calculate(currency_saved, currencyEl.value);
 });
+
 // Initial count and total set
 populateUI();
 
 comprobar_inicio();
-
