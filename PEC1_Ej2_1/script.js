@@ -108,11 +108,4 @@ form.addEventListener('submit', function (e) {
                 case "url": checkUrl(url); break;
             }
     }
-
-    if (required[username.id]) checkLength(username, 3, 15);
-    if (required[email.id]) checkEmail(email);
-    if (required[password.id]) checkLength(password, 6, 25);
-    if (required[password2.id]) checkPasswordsMatch(password, password2);
-    if (required[age.id]) checkAge(age);
-    if (required[url.id]) checkUrl(url);
 });

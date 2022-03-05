@@ -6,15 +6,16 @@ const rateEl = document.getElementById('rate');
 const swap = document.getElementById('swap');
 const msg = document.getElementById('msg');
 
-function calculate() {
+function calculate(evt) {
   const currency_one = currencyEl_one.value;
   const currency_two = currencyEl_two.value;
-  msg.innerText = 'Solicitando datos......................';
-  fetch("https://open.exchangerate-api.com/v6/latest")
+  msg.innerText = '\u23f3 Solicitando datos...';
+  
+  fetch(`https://open.exchangerate-api.com/v6/latest/${currency_one}`)
     .then(res => res.json())
     .then(data => {
       msg.innerText = '';
-      const rate = data.rates[currency_two] / data.rates[currency_one];
+      const rate = data.rates[currency_two];
       rateEl.innerText = `1 ${currency_one} = ${rate} ${currency_two}`;
       amountEl_two.value = (amountEl_one.value * (rate)).toFixed(2);
     })
@@ -24,7 +25,8 @@ function calculate() {
 function comprobar(evt) {
   if (evt.target.value < 0) {
     evt.target.value=0;
-    msg.innerText = "No se permiten números negativos";
+    msg.innerText = "\u26D4 No se permiten números negativos";
+    setTimeout(()=>msg.innerText="",3000);
   } else calculate();
 }
 // Event Listener
