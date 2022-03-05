@@ -79,7 +79,6 @@ function calculate(currency_old, currency_new) {
         e.innerText += ` (${Number.parseFloat(e.value).toFixed(
           2
         )} ${currency_new})`;
-        ticketPrice = movieSelect.value;
       });
       currency_current.innerText = currencyEl.value;
       updateSelectedCount();
@@ -96,16 +95,13 @@ function comprobar_inicio() {
   }
   Array.from(movieSelect.options).forEach((e, k) => {
     e.value = preciosUSD[k];
-    e.innerText += ` (${e.value} ${currency_saved})`;
+    e.innerText += ` (${e.value} $)`;
   });
   currencyEl.value = currency_saved;
   const currency_new = currencyEl.value;
   currency_current.innerText = currencyEl.value;
   if (currency_saved != "USD") {
     calculate("USD", currency_new);
-    Array.from(movieSelect.options).forEach((e) => {
-      e.innerText += ` (${e.value} ${currency_new})`;
-    });
   }
 
 }
