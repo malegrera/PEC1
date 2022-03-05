@@ -8,10 +8,12 @@
 
 * Mejoras realizadas
   
-* Lo que hay que tener en cuenta a la hora de corregir/ejecutar la práctica
-Para ver la ejecución de cada práctica hay que ver el archivo index.html de cada carpeta.
   
-* Cualquier otro aspecto a destacar
+Para ver la ejecución de cada práctica hay que ver el archivo index.html de cada carpeta. Se puede ver en los siguientes enlaces:
+[PEC1_Ej2_1](https://malegrera.github.io/PEC1/PEC1_Ej2_1/)
+[PEC1_Ej2_2](https://malegrera.github.io/PEC1/PEC1_Ej2_2/)
+[PEC1_Ej2_3](https://malegrera.github.io/PEC1/PEC1_Ej2_3/)
+
   
 ***
 Paso a describir los cambios realizados en las diferentes actividades.
