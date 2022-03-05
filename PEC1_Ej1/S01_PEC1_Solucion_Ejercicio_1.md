@@ -1,5 +1,5 @@
 # Ejercicio1
-## Preguntas
+## Preguntas teóricas
 
 1. La aparición de HTML5/CSS3/JS ha supuesto el nacimiento del desarrollo front-end moderno. (0.75 puntos) 
 * ¿Cuál es la ventaja del uso de etiquetas semánticas? Nombra y explica al menos 3 de estas ventajas.
@@ -32,13 +32,18 @@
     - LESS
   
 * Cita al menos 4 ventajas que ofrecen estos preprocesadores. 
-  Estilos más avanzados
+  Estilos más avanzados.
+  Lenguaje de programación para crear estilos con variables, bucles, funciones,...
+  Permiten crear proyectos más complejos.
+  Más fácil de mantener y actualizar.
   
 
   
 * Explica brevemente en qué consisten los sourcemaps. 
   Son ficheros que ayudan a transformar el código fuente al código transpilado.
+
 * Explica qué es un transpilador.
+  Un transpilador es una herramienta que nos permite convertir un código fuente de un lenguaje de alto nivel en otro. Por ejemplo de JavaScript a TypeScript.
 
 1. El flujo de trabajo profesional en front-end hace indispensable el uso de herramientas como controles de versiones y herramientas de gestión de módulos (0.75 puntos).
 * Cita al menos dos sistemas de control de versiones y dos herramientas de gestión de módulos.
@@ -48,9 +53,12 @@
   parcel
 
 * Cita y explica al menos 3 comandos de Git. 
-  add
-  commit
-  push
+  - add
+  Añade ficheros para prepararlos para ser subidos al repositorio.
+  - clone
+  Clona un repositorio completo desde GitHub.
+  - push
+  Sube los cambios pendientes al repositorio.
 
   
 * Cita y explica brevemente las características más definitorias de WebPack.
