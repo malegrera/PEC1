@@ -33,17 +33,17 @@ function checkEmail(input) {
 
 //Check required fields
 function checkRequired(inputArr) {
-    let required=[];
+    let resultado={};
     inputArr.forEach(function (input) {
         if (input.value.trim() === '') {
             showError(input, `${getFieldName(input)} is required`);
-            required.push(false);
+            resultado[input.id]=false;
         } else {
             showSuccess(input);
-            required.push(true);
+            resultado[input.id]=true;
         }
     });
-    return required;
+    return resultado;
 }
 
 //Check input lenght
@@ -97,10 +97,22 @@ form.addEventListener('submit', function (e) {
   
     let required=checkRequired([username, email, password, password2, age, url]);
 
-    if (required.shift()) checkLength(username, 3, 15);
-    if (required.shift()) checkEmail(email);
-    if (required.shift()) checkLength(password, 6, 25);
-    if (required.shift()) checkPasswordsMatch(password, password2);
-    if (required.shift()) checkAge(age);
-    if (required.shift()) checkUrl(url);
+    for (let valor in required) {
+        if (required[valor])
+            switch(valor) {
+                case "username": checkLength(username, 3, 15); break;
+                case "email": checkEmail(email); break;
+                case "password": checkLength(password, 6, 25); break;
+                case "password2": checkPasswordsMatch(password, password2); break;
+                case "age": checkAge(age); break;
+                case "url": checkUrl(url); break;
+            }
+    }
+
+    if (required[username.id]) checkLength(username, 3, 15);
+    if (required[email.id]) checkEmail(email);
+    if (required[password.id]) checkLength(password, 6, 25);
+    if (required[password2.id]) checkPasswordsMatch(password, password2);
+    if (required[age.id]) checkAge(age);
+    if (required[url.id]) checkUrl(url);
 });
