@@ -9,7 +9,7 @@
 * Mejoras realizadas
   
 * Lo que hay que tener en cuenta a la hora de corregir/ejecutar la práctica
-  Para ver la ejecución de cada práctica hay que ver el archivo index.html de cada carpeta.
+Para ver la ejecución de cada práctica hay que ver el archivo index.html de cada carpeta.
   
 * Cualquier otro aspecto a destacar
   
