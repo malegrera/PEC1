@@ -30,8 +30,8 @@ function comprobar(evt) {
 // Event Listener
 currencyEl_one.addEventListener('change', comprobar);
 amountEl_one.addEventListener('input', comprobar);
-currencyEl_two.addEventListener('change', calculate);
-amountEl_two.addEventListener('input', calculate);
+currencyEl_two.addEventListener('change', comprobar);
+amountEl_two.addEventListener('input', comprobar);
 
 swap.addEventListener('click', () => {
   const temp = currencyEl_one.value;
