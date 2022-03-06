@@ -23,7 +23,7 @@ function calculate() {
 }
 
 // Check negatives y and call calculate
-function comprobar(evt) {
+function checkNegatives(evt) {
   if (evt.target.value < 0) {
     evt.target.value=0;
     msg.innerText = "\u26D4 No se permiten números negativos";
@@ -32,10 +32,10 @@ function comprobar(evt) {
 }
 
 // Event Listener
-currencyEl_one.addEventListener('change', comprobar);
-amountEl_one.addEventListener('input', comprobar);
-//currencyEl_two.addEventListener('change', comprobar);
-//amountEl_two.addEventListener('input', comprobar);
+currencyEl_one.addEventListener('change', checkNegatives);
+amountEl_one.addEventListener('input', checkNegatives);
+currencyEl_two.addEventListener('change', checkNegatives);
+amountEl_two.addEventListener('input', checkNegatives);
 
 swap.addEventListener('click', () => {
   const temp = currencyEl_one.value;

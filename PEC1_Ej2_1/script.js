@@ -72,7 +72,7 @@ function checkAge(input) {
     if (isNaN(input.value)) {
         showError(input, 'Must be a number');
     } else if ((input.value<0) || (input.value>=999)) {
-        showError(input,'Debe ser mayor o igual que 0 y menor que 999');
+        showError(input,'Must be greater than or equal to 0 and less than 999');
     } else showSuccess(input);
 }
 
