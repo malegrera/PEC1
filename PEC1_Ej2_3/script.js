@@ -68,10 +68,10 @@ container.addEventListener("click", (e) => {
 });
 
 function calculate(currency_old, currency_new) {
-  fetch(`https://open.exchangerate-api.com/v6/latest/${currency_new}`)
+  fetch(`https://open.exchangerate-api.com/v6/latest/${currency_old}`)
     .then((res) => res.json())
     .then((data) => {
-      const rate = data.rates[currency_old];
+      const rate = data.rates[currency_new];
       Array.from(movieSelect.options).forEach((e) => {
         e.innerText = e.innerText.slice(0, e.innerText.indexOf("("));
         e.value = e.value * rate;

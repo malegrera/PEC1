@@ -5,14 +5,12 @@
   
 * Dificultades
   
-
 * Mejoras realizadas
   
-  
 Para ver la ejecución de cada práctica hay que ver el archivo index.html de cada carpeta. Se puede ver en los siguientes enlaces:
-+ [PEC1_Ej2_1](https://malegrera.github.io/PEC1/PEC1_Ej2_1/)
-+ [PEC1_Ej2_2](https://malegrera.github.io/PEC1/PEC1_Ej2_2/)
-+ [PEC1_Ej2_3](https://malegrera.github.io/PEC1/PEC1_Ej2_3/)
++ [PEC1_Ej2_1](PEC1_Ej2_1/index.html)
++ [PEC1_Ej2_2](PEC1_Ej2_2/index.html)
++ [PEC1_Ej2_3](PEC1_Ej2_3/index.html)
 
   
 ***
@@ -47,6 +45,17 @@ function checkAge(input) {
     } else if ((input.value<0) || (input.value>=999)) {
         showError(input,'Debe ser mayor o igual que 0 y menor que 999');
     } else showSuccess(input);
+}
+```
+Para comprobar si la url es correcta, he añadido la siguiente función:
+```
+function checkUrl(input) {
+     const re=/^(?:(?:https?|ftp):\/\/)?[\w\-]+((\.|\/)[\w\-]+)*$/i;
+    if (re.test(input.value.trim())) {
+        showSuccess(input);
+    } else {
+        showError(input, 'Url is not valid');
+    }
 }
 ```
 
