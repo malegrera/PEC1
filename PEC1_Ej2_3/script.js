@@ -94,14 +94,14 @@ function comprobar_inicio() {
   }
   Array.from(movieSelect.options).forEach((e, k) => {
     e.value = preciosUSD[k];
-    e.innerText += ` (${e.value} $)`;
+    e.innerText += ` (${e.value} USD)`;
   });
   currencyEl.value = currency_saved;
   const currency_new = currencyEl.value;
   currency_current.innerText = currencyEl.value;
   if (currency_saved != "USD") {
     calculate("USD", currency_new);
-  }
+  } else updateSelectedCount();
 }
 
 currencyEl.addEventListener("change", () => {
@@ -112,5 +112,4 @@ currencyEl.addEventListener("change", () => {
 
 // Initial count and total set
 populateUI();
-
 comprobar_inicio();
