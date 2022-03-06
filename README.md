@@ -7,9 +7,11 @@
   
 * Mejoras realizadas
   
-Para ver la ejecución de cada práctica hay que ver el archivo index.html de cada carpeta. Se puede ver en los siguientes enlaces:
+Para ver la ejecución de cada práctica hay que ver el archivo index.html de cada carpeta. Se puede ver en el funcionamiento en los siguientes enlaces:
 + [PEC1_Ej2_1](https://malegrera.github.io/PEC1/PEC1_Ej2_1)
+  
 + [PEC1_Ej2_2](https://malegrera.github.io/PEC1/PEC1_Ej2_2)
+  
 + [PEC1_Ej2_3](https://malegrera.github.io/PEC1/PEC1_Ej2_3)
 
   
@@ -50,7 +52,7 @@ function checkAge(input) {
 Para comprobar si la url es correcta, he añadido la siguiente función:
 ```
 function checkUrl(input) {
-     const re=/^(?:(?:https?|ftp):\/\/)?[\w\-]+((\.|\/)[\w\-]+)*$/i;
+     const re=/^(?:(?:https?|ftp):\/\/)[\w\-]+((\.|\/)[\w\-]+)*$/i;
     if (re.test(input.value.trim())) {
         showSuccess(input);
     } else {
@@ -71,7 +73,7 @@ function comprobar(evt) {
   } else calculate();
 }
 ```
-Para ver el mensaje de espera mientras se reciben los datos y el error, he modificado lo siguiente dentro de la función calculate()
+Para ver el mensaje de espera mientras se reciben los datos y capturar y mostrar un mensaje de error, he modificado lo siguiente dentro de la función calculate()
 ```
  msg.innerText = '\u23f3 Solicitando datos...';
   

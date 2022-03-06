@@ -78,7 +78,7 @@ function checkAge(input) {
 
 //Check url is valid
 function checkUrl(input) {
-     const re=/^(?:(?:https?|ftp):\/\/)?[\w\-]+((\.|\/)[\w\-]+)*$/i;
+     const re=/^(?:(?:https?|ftp):\/\/)[\w\-]+((\.|\/)[\w\-]+)*$/i;
     if (re.test(input.value.trim())) {
         showSuccess(input);
     } else {
