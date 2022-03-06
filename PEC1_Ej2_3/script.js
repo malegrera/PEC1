@@ -84,7 +84,7 @@ function calculate(currency_old, currency_new) {
     });
 }
 
-function comprobar_inicio() {
+function checkStart() {
   let currency_saved = localStorage.getItem("selectedCurrency");
   let preciosUSD = [10, 12, 8, 9];
   if (currency_saved == null) {
@@ -112,4 +112,4 @@ currencyEl.addEventListener("change", () => {
 
 // Initial count and total set
 populateUI();
-comprobar_inicio();
+checkStart();
