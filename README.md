@@ -4,7 +4,8 @@
 ## Desarrollo front-end con frameworks JavaScript
 ---
 **Desarrollo de la PEC**  
-En el desarrollo de la práctica, en el código, he seguido utilizando el idioma inglés para el contenido que he añadido porque de esta forma estaba en el código original y así queda más homogéneo. También lo he utilizado en los mensajes mostrados por pantalla y así sirve el atributo *lang=en* para toda la página en cada uno de los ejercicios.
+En el desarrollo de la práctica, en el código, he seguido utilizando el idioma inglés para el contenido que he añadido porque de esta forma estaba en el código original y así queda más homogéneo. También lo he utilizado en los mensajes mostrados por pantalla y así sirve el atributo *lang="en"* para toda la página en cada uno de los ejercicios.  
+En los ejercicios 2 y 3 he utilizado la versión 6 de la API de [api.exchangerate-api.com](https://www.exchangerate-api.com/)
 
 **Dificultades encontradas**  
 El desarrollo mediante el seguimiento de los enlaces de las prácticas guiadas ha sido cómodo y fácil de seguir, pero he encontrado algunas dificultades a lo largo de la realización de la práctica, entre ellas cito las siguientes:  
