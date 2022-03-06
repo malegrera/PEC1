@@ -22,6 +22,7 @@ function calculate() {
     .catch(error => msg.innerText = error);
 }
 
+// Check negatives y and call calculate
 function comprobar(evt) {
   if (evt.target.value < 0) {
     evt.target.value=0;
@@ -29,11 +30,12 @@ function comprobar(evt) {
     setTimeout(()=>msg.innerText="",3000);
   } else calculate();
 }
+
 // Event Listener
 currencyEl_one.addEventListener('change', comprobar);
 amountEl_one.addEventListener('input', comprobar);
-currencyEl_two.addEventListener('change', comprobar);
-amountEl_two.addEventListener('input', comprobar);
+//currencyEl_two.addEventListener('change', comprobar);
+//amountEl_two.addEventListener('input', comprobar);
 
 swap.addEventListener('click', () => {
   const temp = currencyEl_one.value;
